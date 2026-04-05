@@ -1,12 +1,12 @@
 # wazuh-lab
-Projeto de monitoramento de segurança com Wazuh (SIEM)
+Laboratório de Cibersegurança com Wazuh (SIEM): Detecção de Ataques em Ambiente Controlado
 
 ## Introdução
 Este projeto tem como objetivo a implementação de um ambiente de monitoramento de segurança utilizando o Wazuh, atuando como uma solução SIEM (Security Information and Event Management).
 
 O laboratório foi desenvolvido com foco na detecção de atividades maliciosas em um ambiente controlado, por meio da simulação de ataques comuns, como varredura de rede e tentativas de acesso não autorizado.
 
-Os testes foram realizados a partir de uma máquina atacante (Kali Linux), permitindo avaliar a capacidade do Wazuh em coletar e analisar os eventos de segurança.
+Os testes foram realizados a partir de uma máquina atacante (Kali Linux), permitindo a geração e análise de eventos de segurança em um ambiente monitorado.
 
 ## Instalação
 O ambiente foi implementado utilizando máquinas virtuais, simulando uma rede com múltiplos hosts.
