@@ -29,10 +29,7 @@ O ambiente foi estruturado em uma rede local virtualizada, composta por três m�
 
 - Ubuntu (Wazuh Server) – 192.168.0.112: Máquina onde a stack do Wazuh foi instalada, responsável pela coleta, análise e visualização dos eventos de segurança. 
 
-- Ubuntu (Wazuh Agent) – 192.168.0.113: Máquina monitorada pelo Wazuh, responsável pelo envio de logs e eventos para o servidor.
-
-## Fluxograma
-imagem
+- Ubuntu (Wazuh Agent) – 192.168.0.113: Máquina monitorada, responsável pelo envio de logs.
 
 ## Ataques Simulados
 Com o ambiente devidamente configurado, foram realizados testes de segurança a partir da máquina Kali Linux, simulando atividades maliciosas no ambiente monitorado.
@@ -47,7 +44,9 @@ nmap -sS 192.168.0.113
 
 Esse tipo de varredura não completa o handshake TCP, tornando a detecção mais difícil e simulando um comportamento mais próximo de um atacante real.
 
-imagem
+![Nmap](Nmap.jpeg)
+
+O print apresenta a execução de um scan com o Nmap utilizando a técnica SYN scan para identificar portas abertas no alvo, demonstrando conhecimento em reconhecimento de rede e enumeração de serviços.
 
 ### Ataque de Força Bruta (Hydra)
 
@@ -63,9 +62,26 @@ Onde:
 - `-t` define o número de threads simultâneas  
 
 
-A utilização de múltiplas threads intensifica o volume de requisições, simulando ataques automatizados em larga escala.
+A utilização de múltiplas threads intensifica o volume de requisições, simulando ataques automatizados.
 
-Durante a execução, foram geradas múltiplas tentativas de autenticação inválida, criando eventos relevantes para análise, conforme evidenciado nos registros do Wazuh.
+Durante a execução, foram geradas múltiplas tentativas de autenticação inválidas, criando eventos relevantes para análise.
 
-imagem
+![Hydra](Hydra.jpeg)
+![Eventos](Eventos-Wazuh.jpeg)
 
+O print mostra alertas do Wazuh indicando múltiplas tentativas de login inválidas, classificadas como ataque de força bruta (T1110), geradas durante a simulação realizada com a ferramenta Hydra, evidenciando a capacidade de simular ataques e analisar eventos de segurança em ambiente monitorado.
+
+## Conclusão
+
+O projeto permitiu a aplicação prática de conceitos de cibersegurança, incluindo reconhecimento de rede, simulação de ataques e análise de eventos em um ambiente SIEM.
+
+Além disso, possibilitou o desenvolvimento de habilidades práticas em detecção de atividades maliciosas, investigação de eventos e utilização de ferramentas amplamente empregadas no mercado.
+
+## Habilidades Desenvolvidas
+
+- Reconhecimento de rede com Nmap  
+- Simulação de ataques de força bruta com Hydra  
+- Análise de logs e eventos de segurança  
+- Utilização de SIEM (Wazuh)  
+- Interpretação de alertas baseados em MITRE ATT&CK  
+- Configuração de ambiente virtualizado para testes de segurança  
